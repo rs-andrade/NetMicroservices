@@ -1,0 +1,12 @@
+# Server
+
+sudo kubelet --fail-swap-on=false
+sudo kubeadm init --ignore-preflight-errors=Service-Docker --ignore-preflight-errors=Swap
+
+
+
+# Imagens
+
+Apply
+
+kubectl apply -f platforms-depl.yaml
