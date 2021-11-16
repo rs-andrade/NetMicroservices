@@ -18,6 +18,7 @@ minikube dashboard
 
 - Apply (Criando o Deployment/Pods)
 kubectl apply -f platforms-depl.yaml
+kubectl apply -f commands-depl.yaml
 
 - Consultando se foi Criado o Deployment
 kubectl get deployments
@@ -37,3 +38,12 @@ kubectl get services
 
 - Criando acesso ao MiniKube do NodePort
 minikube service --url platformnpservice-srv
+
+- Atualizando um cintainner no kubernets
+kubectl rollout restart deployment platforms-depl
+
+- Consultando Log de um Pods
+kubectl get pods
+Com o nome do pod do comando acima, faz o comando abaixo:
+kubectl logs platforms-depl-7d69666d74-d7nft
+kubectl logs commands-depl-b4b9d568b-vc2v2
