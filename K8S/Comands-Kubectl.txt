@@ -1,12 +1,40 @@
 # Server
 
+##Não funcionou
 sudo kubelet --fail-swap-on=false
 sudo kubeadm init --ignore-preflight-errors=Service-Docker --ignore-preflight-errors=Swap
+sudo kubeadm reset
 
+MiniKube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start
+kubectl get po -A
+
+Dashboard
+http://127.0.0.1:33579/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
 
 
 # Imagens
 
-Apply
-
+- Apply (Criando o Deployment/Pods)
 kubectl apply -f platforms-depl.yaml
+
+- Consultando se foi Criado o Deployment
+kubectl get deployments
+
+- Consultando os Pods
+kubectl get pods
+
+- Apagamentos os deployments
+kubectl delete deployment platforms-depl
+
+# NodePort (Rede)
+-Criando o Service
+kubectl apply -f platforms-np-srv.yaml
+
+- Consultando o serviço
+kubectl get services
+
+- Criando acesso ao MiniKube do NodePort
+minikube service --url platformnpservice-srv
