@@ -12,8 +12,7 @@ minikube start
 kubectl get po -A
 
 Dashboard
-http://127.0.0.1:33579/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
-
+minikube dashboard
 
 # Imagens
 
