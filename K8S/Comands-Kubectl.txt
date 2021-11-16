@@ -19,6 +19,7 @@ minikube dashboard
 - Apply (Criando o Deployment/Pods)
 kubectl apply -f platforms-depl.yaml
 kubectl apply -f commands-depl.yaml
+kubectl apply -f ingress-srv.yaml
 
 - Consultando se foi Criado o Deployment
 kubectl get deployments
@@ -47,3 +48,7 @@ kubectl get pods
 Com o nome do pod do comando acima, faz o comando abaixo:
 kubectl logs platforms-depl-7d69666d74-d7nft
 kubectl logs commands-depl-b4b9d568b-vc2v2
+
+# Nginx
+Site de como instalar o Nginx
+https://kubernetes.github.io/ingress-nginx/deploy/
