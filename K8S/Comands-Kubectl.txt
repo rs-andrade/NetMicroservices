@@ -22,6 +22,8 @@ minikube service --url kubernetes-dashboard --namespace=kubernetes-dashboard
 kubectl apply -f platforms-depl.yaml
 kubectl apply -f commands-depl.yaml
 kubectl apply -f ingress-srv.yaml
+kubectl apply -f local-pvc.yaml
+kubectl apply -f mssql-plat-depl.yaml
 
 - Consultando se foi Criado o Deployment
 kubectl get deployments
@@ -42,7 +44,7 @@ kubectl get services
 - Criando acesso ao MiniKube do NodePort
 minikube service --url platformnpservice-srv
 
-- Atualizando um cintainner no kubernets
+- Atualizando um containner no kubernets
 kubectl rollout restart deployment platforms-depl
 
 - Consultando Log de um Pods
@@ -57,3 +59,13 @@ https://kubernetes.github.io/ingress-nginx/deploy/
 
 - Criando acesso ao ingress pelo windows
 minikube service --url ingress-nginx-controller --namespace ingress-nginx
+
+#storage
+kubectl get storageclass
+kubectl get pvc
+
+#password
+kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
+
+#loadbalancer on minukube
+minikube tunnel
