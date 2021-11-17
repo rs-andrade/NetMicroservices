@@ -13,6 +13,8 @@ kubectl get po -A
 
 Dashboard
 minikube dashboard
+ou
+minikube service --url kubernetes-dashboard --namespace=kubernetes-dashboard
 
 # Imagens
 
@@ -52,3 +54,6 @@ kubectl logs commands-depl-b4b9d568b-vc2v2
 # Nginx
 Site de como instalar o Nginx
 https://kubernetes.github.io/ingress-nginx/deploy/
+
+- Criando acesso ao ingress pelo windows
+minikube service --url ingress-nginx-controller --namespace ingress-nginx
