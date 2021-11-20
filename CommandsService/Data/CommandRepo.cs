@@ -28,6 +28,11 @@ namespace CommandsService.Data
             _context.Platforms.Add(plat);
         }
 
+        public bool ExternalPlaformExist(int externalPlatformId)
+        {
+            return (_context.Platforms.Any(p => p.ExternalId == externalPlatformId));
+        }
+
         public IEnumerable<Platform> GetAllPlatforms()
         {
             return (_context.Platforms.ToList());
@@ -47,7 +52,7 @@ namespace CommandsService.Data
                 .OrderBy(p => p.Platform.Name));
         }
 
-        public bool PlaformExits(int platformId)
+        public bool PlaformExist(int platformId)
         {
             return (_context.Platforms.Any(p => p.Id == platformId));
         }

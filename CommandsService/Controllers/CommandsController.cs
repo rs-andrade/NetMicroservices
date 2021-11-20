@@ -24,7 +24,7 @@ namespace CommandsService.Controllers
         {
             Console.WriteLine($"--> Hit GetCommandsForPlatform: {platformId}");
 
-            if (!_repository.PlaformExits(platformId))
+            if (!_repository.PlaformExist(platformId))
                 return NotFound();
 
             var commandsItems = _repository.GetCommandsForPlatform(platformId);
@@ -37,7 +37,7 @@ namespace CommandsService.Controllers
         {
             Console.WriteLine($"--> Hit GetCommandForPlatform: {platformId} / {commandId}");
 
-            if (!_repository.PlaformExits(platformId))
+            if (!_repository.PlaformExist(platformId))
                 return NotFound();
 
             var command = _repository.GetCommand(platformId, commandId);
@@ -54,7 +54,7 @@ namespace CommandsService.Controllers
         {
             Console.WriteLine($"--> Hit CreateCommand: {platformId}");
 
-            if (!_repository.PlaformExits(platformId))
+            if (!_repository.PlaformExist(platformId))
                 return NotFound();
             
             var command = _mapper.Map<Command>(commandCreateDto);
