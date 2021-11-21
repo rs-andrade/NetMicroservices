@@ -73,3 +73,5 @@ kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
 minikube tunnel
 
 #RabitMQ
+-Criando acesso a porta do RabitMQ
+minikube service --url rabbitmq-clusterip-srv
